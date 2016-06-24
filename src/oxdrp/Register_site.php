@@ -6,7 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2015 - 2016, Gluu inc, USA, Austin
+ * Copyright (c) 2015-2016, Gluu inc, USA, Austin
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,13 +27,13 @@
  * THE SOFTWARE.
  *
  * @package	Gluu-oxd-library
- * @version 2.4.2
+ * @version 2.4.3
  * @author	Vlad Karapetyan
  * @author		vlad.karapetyan.1988@mail.ru
- * @copyright	Copyright (c) 2015 - 2016, Gluu inc federation (https://gluu.org/)
+ * @copyright	Copyright (c) 2015-2016, Gluu inc federation (https://gluu.org/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://gluu.org/
- * @since	Version 2.4.2
+ * @since	Version 2.4.3
  * @filesource
  */
 
@@ -108,7 +108,7 @@ class Register_site extends Client_OXD_RP
     /**
      * @var array $request_client_logout_uris
      */
-    private $request_client_logout_uri = null;
+    private $request_client_logout_uris = null;
 
     /**
      * Response parameter from oXD-server
@@ -130,20 +130,20 @@ class Register_site extends Client_OXD_RP
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getRequestClientLogoutUri()
+    public function getRequestClientLogoutUris()
     {
-        return $this->request_client_logout_uri;
+        return $this->request_client_logout_uris;
     }
 
     /**
-     * @param string $request_client_logout_uri
+     * @param array $request_client_logout_uris
      * @return void
      */
-    public function setRequestClientLogoutUri($request_client_logout_uri)
+    public function setRequestClientLogoutUri($request_client_logout_uris)
     {
-        $this->request_client_logout_uri = $request_client_logout_uri;
+        $this->request_client_logout_uris = $request_client_logout_uris;
     }
 
     /**
@@ -394,7 +394,7 @@ class Register_site extends Client_OXD_RP
             "contacts" => $this->getRequestContacts(),
             "grant_types" => $this->getRequestGrantTypes(),
             "response_types"=> $this->getRequestResponseTypes(),
-            "client_logout_uri"=> $this->getRequestClientLogoutUri()
+            "client_logout_uris"=> [$this->getRequestClientLogoutUris()]
         );
     }
 
