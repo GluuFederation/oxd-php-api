@@ -51,8 +51,8 @@
  * @see	        Oxd_RP_config
  */
 
-require_once 'Client_Socket_OXD_RP.php';
-require_once 'Oxd_RP_config.php';
+namespace oxdrp;
+use oxdrp\Client_Socket_OXD_RP;
 
 abstract class Client_OXD_RP extends Client_Socket_OXD_RP{
 
@@ -169,7 +169,7 @@ abstract class Client_OXD_RP extends Client_Socket_OXD_RP{
      * Setting response status
      *
      * @return	void
-    */
+     */
     public function setResponseStatus()
     {
         $this->response_status = $this->getResponseObject()->status;

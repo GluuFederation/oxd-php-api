@@ -30,7 +30,7 @@
  * @version 2.4.2
  * @author	Vlad Karapetyan
  * @author	vlad.karapetyan.1988@mail.ru
- * @copyright	Copyright (c) 2015 - 2016, Gluu inc federation (https://gluu.org/)
+ * @copyright	Copyright (c) 2015 - 2016 - 2016, Gluu inc federation (https://gluu.org/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://gluu.org/
  * @since	Version 2.4.2
@@ -49,7 +49,7 @@
  * @author		vlad.karapetyan.1988@mail.ru
  * @see	        Oxd_RP_config
  */
-require_once 'Oxd_RP_config.php';
+namespace oxdrp;
 
 class Client_Socket_OXD_RP{
 
@@ -66,14 +66,12 @@ class Client_Socket_OXD_RP{
     /**
      * Constructor
      *
-     * Initialize base url for log file directory and oxd-rp-setting.json file.
-     *
-     * @param string $base_url
      * @return	void
      */
     public function __construct()
     {
-        $configJSON = file_get_contents($this->base_url.'//oxd-rp-settings.json');
+
+        $configJSON = file_get_contents($this->base_url.'/oxd-rp-settings.json');
         $configOBJECT = json_decode($configJSON);
         if(!$configOBJECT->authorization_redirect_uri){
             if(!$configJSON = file_get_contents($this->base_url.'/oxd-rp-settings-test.json')){
@@ -97,7 +95,7 @@ class Client_Socket_OXD_RP{
 
     /**
      * Defining oxd-setting.json file for static object Oxd_RP_config
-     * @param object $configOBJECT
+     *
      * @return void
      **/
     public function define_variables($configOBJECT){

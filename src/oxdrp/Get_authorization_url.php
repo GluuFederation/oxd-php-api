@@ -6,7 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2015, Gluu inc, USA, Austin
+ * Copyright (c) 2015 - 2016, Gluu inc, USA, Austin
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@
  * @version 2.4.2
  * @author	Vlad Karapetyan
  * @author		vlad.karapetyan.1988@mail.ru
- * @copyright	Copyright (c) 2015, Gluu inc federation (https://gluu.org/)
+ * @copyright	Copyright (c) 2015 - 2016, Gluu inc federation (https://gluu.org/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://gluu.org/
  * @since	Version 2.4.2
@@ -51,7 +51,8 @@
  * @see	        Client_OXD_RP
  * @see	        Oxd_RP_config
  */
-require_once 'Client_OXD_RP.php';
+namespace oxdrp;
+use oxdrp\Client_OXD_RP;
 
 class Get_authorization_url extends Client_OXD_RP
 {
@@ -68,7 +69,7 @@ class Get_authorization_url extends Client_OXD_RP
      * It is authorization url to gluu server.
      * After getting this parameter go to that url and you can login to gluu server, and get response about your users
      * @var string $response_authorization_url
-    */
+     */
     private $response_authorization_url;
 
     /**
@@ -107,8 +108,8 @@ class Get_authorization_url extends Client_OXD_RP
     }
 
     /**
-     * @param string $request_acr_values
-     * @return array
+     * @param array $request_acr_values
+     * @return void
      */
     public function setRequestAcrValues($request_acr_values)
     {

@@ -6,7 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2015, Gluu inc, USA, Austin
+ * Copyright (c) 2015 - 2016, Gluu inc, USA, Austin
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@
  * @version 2.4.2
  * @author	Vlad Karapetyan
  * @author		vlad.karapetyan.1988@mail.ru
- * @copyright	Copyright (c) 2015, Gluu inc federation (https://gluu.org/)
+ * @copyright	Copyright (c) 2015 - 2016, Gluu inc federation (https://gluu.org/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://gluu.org/
  * @since	Version 2.4.2
@@ -52,7 +52,8 @@
  * @see	        Oxd_RP_config
  */
 
-require_once 'Client_OXD_RP.php';
+namespace oxdrp;
+use oxdrp\Client_OXD_RP;
 
 class Register_site extends Client_OXD_RP
 {
@@ -93,11 +94,11 @@ class Register_site extends Client_OXD_RP
      */
     private $request_contacts = null;
     /**
-     * @var array $request_scope                            For getting needed scopes data from gluu-server
+     * @var array $request_scope                            For getting needed scopes from gluu-server
      */
     private $request_scope = null;
     /**
-     * @var string $request_grant_types                     OpenID Token Request type
+     * @var array $request_grant_types                     OpenID Token Request type
      */
     private $request_grant_types = null;
     /**
@@ -105,7 +106,7 @@ class Register_site extends Client_OXD_RP
      */
     private $request_response_types = null;
     /**
-     * @var string $request_client_logout_uri
+     * @var array $request_client_logout_uris
      */
     private $request_client_logout_uri = null;
 
@@ -393,7 +394,7 @@ class Register_site extends Client_OXD_RP
             "contacts" => $this->getRequestContacts(),
             "grant_types" => $this->getRequestGrantTypes(),
             "response_types"=> $this->getRequestResponseTypes(),
-            "client_logout_uri"=> $this->getRequestClientLogoutUri()
+            "client_logout_uris"=> $this->getRequestClientLogoutUri()
         );
     }
 
