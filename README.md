@@ -1,2 +1,2 @@
 # oxdphpapi
-Use OpenID Connect to login by leveraging the oxd client service demon.
+Protect your applications with oxD to enable single sign-on and API access management with OpenID Connect and UMA.
