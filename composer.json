@@ -1,6 +1,6 @@
 {
   "name": "gluufederation/oxdphpapi",
-  "description": "Use OpenID Connect to login by leveraging the oxd client service demon.",
+  "description": "Protect your applications with oxD to enable single sign-on and API access management with OpenID Connect and UMA.",
   "license": "MIT",
   "version": "2.4.4",
   "authors": [
@@ -15,7 +15,7 @@
       "email": "mike@gluu.org",
       "homepage": "https://www.gluu.org",
       "role": "Director"
-      
+
     }
   ],
   "support": {
