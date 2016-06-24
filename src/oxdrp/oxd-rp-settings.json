@@ -1,12 +1,13 @@
 {
+  "op_host": "",
   "oxd_host_ip": "127.0.0.1",
   "oxd_host_port":8099,
   "authorization_redirect_uri" : "",
   "logout_redirect_uri" : "",
-  "scope" : [ "openid", "profile" ],
+  "scope" : [ "openid", "profile","uma_protection","uma_authorization" ],
   "application_type" : "web",
   "redirect_uris" : [ "" ],
   "response_types" : ["code"],
   "grant_types":["authorization_code"],
-  "acr_values" : [ "basic", "duo" ]
+  "acr_values" : [ "basic", "duo","u2f","gplus", "oxpush2" ]
 }

@@ -2,7 +2,7 @@
   "name": "gluufederation/oxdphpapi",
   "description": "Use OpenID Connect to login by leveraging the oxd client service demon.",
   "license": "MIT",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "authors": [
     {
       "name": "Vlad Karapetyan",
