@@ -38,7 +38,7 @@
  */
 
 /**
- * Client OXD RP class
+ * Client oxd RP class
  *
  * Class is basic, which is connecting to oxd-server via socket
  *

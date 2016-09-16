@@ -40,7 +40,7 @@
 /**
  * Client Logout class
  *
- * Class is connecting to oXD-server via socket, and doing logout from gluu-server.
+ * Class is connecting to oxd-server via socket, and doing logout from gluu-server.
  *
  * @package		Gluu-oxd-library
  * @subpackage	Libraries
@@ -77,7 +77,7 @@ class Logout extends Client_OXD_RP
      */
     private $request_state = null;
     /**
-     * Response parameter from oXD-server
+     * Response parameter from oxd-server
      * Doing logout user from all sites
      *
      * @var string $response_claims
@@ -189,7 +189,7 @@ class Logout extends Client_OXD_RP
         $this->request_oxd_id = $request_oxd_id;
     }
     /**
-     * Protocol command to oXD server
+     * Protocol command to oxd server
      * @return void
      */
     public function setCommand()
@@ -197,7 +197,7 @@ class Logout extends Client_OXD_RP
         $this->command = 'get_logout_uri';
     }
     /**
-     * Protocol parameter to oXD server
+     * Protocol parameter to oxd server
      * @return void
      */
     public function setParams()

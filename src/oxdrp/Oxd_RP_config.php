@@ -38,7 +38,7 @@
  */
 
 /**
- * Oxd RP config
+ * oxd RP config
  *
  * Class Oxd_RP_config, setting all configuration
  *
@@ -57,11 +57,6 @@ class Oxd_RP_config
      * @var string $op_host        Gluu server url, which need to connect
      */
     public static $op_host;
-    /**
-     * @static
-     * @var string $oxd_host_ip        Socket connection ip
-     */
-    public static $oxd_host_ip;
     /**
      * @static
      * @var int $oxd_host_port        Socket connection port

@@ -41,7 +41,7 @@
 /**
  * UMA RS Check Access class
  *
- * Class is connecting to oXD-server via socket, and getting access grant response from gluu-server.
+ * Class is connecting to oxd-server via socket, and getting access grant response from gluu-server.
  *
  * @package		Gluu-oxd-library
  * @subpackage	Libraries
@@ -75,7 +75,7 @@ class Uma_rs_check_access extends Client_OXD_RP{
     private $request_http_method = null;
 
     /**
-     * Response parameter from oXD-server
+     * Response parameter from oxd-server
      * Access grant response (granted or denied)
      *
      * @var string $response_access
@@ -83,7 +83,7 @@ class Uma_rs_check_access extends Client_OXD_RP{
     private $response_access;
 
     /**
-     * Response parameter from oXD-server
+     * Response parameter from oxd-server
      * Tiket number
      *
      * @var string $response_ticket
@@ -188,7 +188,7 @@ class Uma_rs_check_access extends Client_OXD_RP{
     }
 
     /**
-     * Protocol command to oXD server
+     * Protocol command to oxd server
      * @return void
      */
     public function setCommand()
@@ -197,7 +197,7 @@ class Uma_rs_check_access extends Client_OXD_RP{
     }
 
     /**
-     * Protocol parameter to oXD server
+     * Protocol parameter to oxd server
      * @return void
      */
     public function setParams()

@@ -40,7 +40,7 @@
 /**
  * User information class
  *
- * Class is connecting to oXD-server via socket, and getting logedin user information url from gluu-server.
+ * Class is connecting to oxd-server via socket, and getting logedin user information url from gluu-server.
  *
  * @package		Gluu-oxd-library
  * @subpackage	Libraries
@@ -66,7 +66,7 @@ class Get_user_info extends Client_OXD_RP
      */
     private $request_access_token = null;
     /**
-     * Response parameter from oXD-server
+     * Response parameter from oxd-server
      * Showing logedin user information
      *
      * @var array $response_claims
@@ -127,7 +127,7 @@ class Get_user_info extends Client_OXD_RP
     }
 
     /**
-     * Protocol command to oXD server
+     * Protocol command to oxd server
      * @return void
      */
     public function setCommand()
@@ -135,7 +135,7 @@ class Get_user_info extends Client_OXD_RP
         $this->command = 'get_user_info';
     }
     /**
-     * Protocol parameter to oXD server
+     * Protocol parameter to oxd server
      * @return void
      */
     public function setParams()

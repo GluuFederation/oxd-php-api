@@ -40,7 +40,7 @@
 /**
  * Autoload class
  *
- * Class is autoloading namespaces and classes.
+ * Class is auto-loading namespaces and classes.
  *
  * @package		Gluu-oxd-library
  * @subpackage	Libraries
