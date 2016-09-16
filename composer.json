@@ -1,21 +1,21 @@
 {
   "name": "gluufederation/oxdphpapi",
-  "description": "Protect your applications with oxD to enable single sign-on and API access management with OpenID Connect and UMA.",
+  "description": "Protect your applications with oxd to enable single sign-on and API access management with OpenID Connect and UMA.",
   "license": "MIT",
   "version": "2.4.4",
   "authors": [
-    {
-      "name": "Vlad Karapetyan",
-      "email": "vlad.karapetyan.1988@mail.ru",
-      "homepage": "https://github.com/dollar007",
-      "role": "Developer"
-    },
     {
       "name": "Mike Schwartz",
       "email": "mike@gluu.org",
       "homepage": "https://www.gluu.org",
       "role": "Director"
 
+    },
+    {
+      "name": "Vlad Karapetyan",
+      "email": "vlad.karapetyan.1988@mail.ru",
+      "homepage": "https://github.com/dollar007",
+      "role": "Developer"
     }
   ],
   "support": {
