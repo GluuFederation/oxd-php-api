@@ -1,4 +1,4 @@
-# oxd-php
+# oxd-php-api
 
 oxd-php is a client library for the Gluu oxd Server. 
 
@@ -8,7 +8,7 @@ oxd-php is a client library for the Gluu oxd Server.
 
 oxd-php source is available on Github:
 
-- [Github sources](https://github.com/GluuFederation/oxd-php)
+- [Github sources](https://github.com/GluuFederation/oxd-php-api)
 
 ### Composer: oxd-php-api
 
