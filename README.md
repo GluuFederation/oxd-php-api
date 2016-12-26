@@ -37,7 +37,7 @@ The oxd-php configuration file is located in
 'oxd-rp-settings.json'. The values here are used during 
 registration. For a full list of supported
 oxd configuration parameters, see the 
-[oxd documentation](https://oxd.gluu.org/docs/oxdserver/#register-site)
+[oxd documentation](https://oxd.gluu.org/docs/protocol/#register-site)
 Below is a typical configuration data set for registration:
 
 ``` {.code }
@@ -102,13 +102,11 @@ Client\_OXD\_RP.php is the base class which all classes extend.
 
 ### Client\_OXD\_RP.php 
 
-[Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Clinet_OXD_RP.html).
-Client_OXD_RP class is an abstract class, which extends [Client_Socket_OXD_RP class](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Client_Socket_OXD_RP.html)..
+Client_OXD_RP class is an abstract class, which extends Client_Socket_OXD_RP class.
 
 ### Register\_site.php 
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Register_site.html).
-- [Register_site protocol description](https://oxd.gluu.org/docs/oxdserver/#register-site).
+- [Register_site protocol description](https://oxd.gluu.org/docs/protocol/#register-site).
 
 **Example**
 
@@ -139,8 +137,7 @@ print_r($register_site->getResponseObject());
 
 ### Update\_site\_registration.php 
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Update_site_registration.html).
-- [Update_site_registration protocol description](https://oxd.gluu.org/docs/oxdserver/#update-site-registration).
+- [Update_site_registration protocol description](https://oxd.gluu.org/docs/protocol/#update-site-registration).
 
 **Example**
 
@@ -170,8 +167,7 @@ print_r($update_site_registration->getResponseObject());
 
 ### Get\_authorization\_url.php 
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Get_authorization_url.html).
-- [Get_authorization_url protocol description](https://oxd.gluu.org/docs/oxdserver/#get-authorization-url).
+- [Get_authorization_url protocol description](https://oxd.gluu.org/docs/protocol/#get-authorization-url).
 
 **Example**
 
@@ -192,8 +188,7 @@ echo $get_authorization_url->getResponseAuthorizationUrl();
 
 ### Get\_tokens\_by\_code.php
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Get_tokens_by_code.html).
-- [Get_tokens_by_code protocol description](https://oxd.gluu.org/docs/oxdserver/#get-tokens-id-access-by-code).
+- [Get_tokens_by_code protocol description](https://oxd.gluu.org/docs/protocol/#get-tokens-id-access-by-code).
 
 **Example**
 
@@ -220,8 +215,7 @@ print_r($get_tokens_by_code->getResponseObject());
 
 ### Get\_user\_info.php
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Get_user_info.html).
-- [Get_user_info protocol description](https://oxd.gluu.org/docs/oxdserver/#get-user-info).
+- [Get_user_info protocol description](https://oxd.gluu.org/docs/protocol/#get-user-info).
 
 **Example**
 
@@ -241,8 +235,7 @@ print_r($get_user_info->getResponseObject());
 
 ### Logout.php
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Logout.html).
-- [Get_logout_uri protocol description](https://oxd.gluu.org/docs/oxdserver/#log-out-uri).
+- [Get_logout_uri protocol description](https://oxd.gluu.org/docs/protocol/#log-out-uri).
 
 **Example**
 
@@ -265,8 +258,7 @@ echo $logout->getResponseHtml();
 
 ### Uma\_rs\_protect.php
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Uma_rs_protect.html).
-- [Uma_rs_protect protocol description](https://oxd.gluu.org/docs/oxdserver/#uma-protect-resources).
+- [Uma_rs_protect protocol description](https://oxd.gluu.org/docs/protocol/#uma-protect-resources).
 
 **Example**
 
@@ -288,8 +280,7 @@ var_dump($uma_rs_protect->getResponseObject());
 
 ### Uma\_rs\_check\_access.php
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Uma_rs_check_access.html).
-- [Uma_rs_check_access protocol description](https://oxd.gluu.org/docs/oxdserver/#uma-check-access).
+- [Uma_rs_check_access protocol description](https://oxd.gluu.org/docs/protocol/#uma-check-access).
 
 **Example**
 
@@ -314,8 +305,7 @@ $_SESSION['uma_ticket'] = $uma_rs_authorize_rpt->getResponseTicket();
 
 ### Uma\_rp\_get\_rpt.php
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Uma_rp_get_rpt.html).
-- [Uma_rp_get_rpt protocol description](https://oxd.gluu.org/docs/oxdserver/).
+- [Uma_rp_get_rpt protocol description](https://oxd.gluu.org/docs/protocol/#uma-rp-get-rpt).
 
 **Example**
 
@@ -335,8 +325,7 @@ echo $uma_rp_get_rpt->getResponseRpt();
 
 ### Uma\_rp\_authorize\_rpt.php
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Uma_rp_authorize_rpt.html).
-- [Uma_rp_authorize_rpt protocol description](https://oxd.gluu.org/docs/oxdserver/).
+- [Uma_rp_authorize_rpt protocol description](https://oxd.gluu.org/docs/protocol/#uma-rp-authorize-rpt).
 
 **Example**
 
@@ -358,8 +347,7 @@ var_dump($uma_rp_authorize_rpt->getResponseObject());
 
 ### Uma\_rp\_get\_gat.php
 
-- [Class description](https://oxd.gluu.org/api-docs/oxd-php/2.4.4/classes/Uma_rp_get_gat.html).
-- [Uma_rp_get_gat protocol description](https://oxd.gluu.org/docs/oxdserver/).
+- [Uma_rp_get_gat protocol description](https://oxd.gluu.org/docs/protocol/#uma-rp-get-gat).
 
 **Example**
 
