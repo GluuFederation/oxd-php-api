@@ -1,5 +1,5 @@
 {
-  "name": "gluufederation/oxdphpapi",
+  "name": "gluufederation/oxd-php-api",
   "description": "Protect your applications with oxd to enable single sign-on and API access management with OpenID Connect and UMA.",
   "license": "MIT",
   "version": "2.4.4",
@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-0": {
-      "oxdphpapi": "src/"
+      "oxd-php-api": "src/"
     }
   }
 }
