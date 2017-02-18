@@ -2,7 +2,7 @@
   "name": "gluufederation/oxd-php-api",
   "description": "Protect your applications with oxd to enable single sign-on and API access management with OpenID Connect and UMA.",
   "license": "MIT",
-  "version": "2.4.4",
+  "version": "3.0.0",
   "authors": [
     {
       "name": "Mike Schwartz",
@@ -12,8 +12,8 @@
 
     },
     {
-      "name": "Vlad Karapetyan",
-      "email": "vlad.karapetyan.1988@mail.ru",
+      "name": "Volodya Karapetyan",
+      "email": "mr.karapetyan88@gmail.com",
       "homepage": "https://github.com/dollar007",
       "role": "Developer"
     }
