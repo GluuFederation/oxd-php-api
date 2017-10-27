@@ -11,11 +11,11 @@
 	 *
 	 * @package	  Oxd Library by Gluu
 	 * @category  Library, Api
-	 * @version   3.0.1
+	 * @version   3.1.1
 	 *
 	 * @author    Gluu Inc.          : <https://gluu.org>
 	 * @link      Oxd site           : <https://oxd.gluu.org>
-	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.0.1/libraries/php/ >
+	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.1/libraries/php/ >
 	 * @director  Mike Schwartz      : <mike@gluu.org>
 	 * @support   Support email      : <support@gluu.org>
 	 * @developer Volodya Karapetyan : <https://github.com/karapetyan88> <mr.karapetyan88@gmail.com>
@@ -89,12 +89,14 @@
 	        }
 	        $configOBJECT = json_decode($configJSON);
 	        $this->define_variables($configOBJECT);
-	
-	        if(is_int(Oxd_RP_config::$oxd_host_port) && Oxd_RP_config::$oxd_host_port>=0 && Oxd_RP_config::$oxd_host_port<=65535){
-	
-	        }else{
-	            $this->error_message(Oxd_RP_config::$oxd_host_port."is not a valid port for socket. Port must be integer and between from 0 to 65535.");
-	        }
+                if(!$this->url)
+                {
+                    if(is_int(Oxd_RP_config::$oxd_host_port) && Oxd_RP_config::$oxd_host_port>=0 && Oxd_RP_config::$oxd_host_port<=65535){
+
+                    }else{
+                        $this->error_message(Oxd_RP_config::$oxd_host_port."is not a valid port for socket. Port must be integer and between from 0 to 65535.");
+                    }
+                }
 	    }
 	
 	    /**
@@ -122,7 +124,7 @@
 	     * @return object
 	     */
 	    public function oxd_socket_request($data,$char_count = 8192){
-	        if (!self::$socket = stream_socket_client( '127.0.0.1:' . Oxd_RP_config::$oxd_host_port, $errno, $errstr, STREAM_CLIENT_PERSISTENT)) {
+	        if (!self::$socket = stream_socket_client('127.0.0.1:' . Oxd_RP_config::$oxd_host_port, $errno, $errstr, STREAM_CLIENT_PERSISTENT)) {
 	            $this->log("Client: socket::socket_connect is not connected, error: ",$errstr);
 	            die($errno);
 	        }else{
@@ -140,6 +142,46 @@
 	            $this->log("Client: oxd_socket_connection", "disconnected.");
 	        }
 	        return $result;
+	    }
+            /**
+	     * Sending request to oXD server via http
+	     *
+	     * @param  string  $url
+	     * @param  string  $data
+	     * @return object
+	     */
+	    public function oxd_http_request($url,$data){
+                $headers = ["Content-type: application/json"];
+                if(array_key_exists('protection_access_token',$data)){
+                    $headers[] = "Authorization: Bearer ".$data['protection_access_token'];
+                    unset($data['protection_access_token']);
+                }
+	        $curl = curl_init($url);
+                curl_setopt($curl, CURLOPT_HEADER, false);
+                //Remove these lines while using real https instead of self signed
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+                //remove above 2 lines
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_HTTPHEADER,
+                        $headers);
+                curl_setopt($curl, CURLOPT_POST, true);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data,true));
+
+                $json_response = curl_exec($curl);
+
+                $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+                if ( $status != 201 && $status != 200) {
+                    die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
+                }
+
+
+                curl_close($curl);
+                $result = $json_response;
+                $this->log("Client: oxd_http_response", $result);
+                $this->log("Client: oxd_http_connection", "disconnected.");
+                return $result;
 	    }
 	    /**
 	     * Showing errors and exit.
@@ -164,7 +206,16 @@
 	        file_put_contents($OldFile, $person, FILE_APPEND | LOCK_EX);
 	
 	    }
-	
+            
+            
+            function getUrl() {
+                return $this->url;
+            }
+
+            function setUrl($url = null) {
+                $this->url = $url;
+            }
 	
 	
 	}
+

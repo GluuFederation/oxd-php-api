@@ -11,11 +11,11 @@
 	 *
 	 * @package	  Oxd Library by Gluu
 	 * @category  Library, Api
-	 * @version   3.0.1
+	 * @version   3.1.1
 	 *
 	 * @author    Gluu Inc.          : <https://gluu.org>
 	 * @link      Oxd site           : <https://oxd.gluu.org>
-	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.0.1/libraries/php/ >
+	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.1/libraries/php/ >
 	 * @director  Mike Schwartz      : <mike@gluu.org>
 	 * @support   Support email      : <support@gluu.org>
 	 * @developer Volodya Karapetyan : <https://github.com/karapetyan88> <mr.karapetyan88@gmail.com>
@@ -78,7 +78,12 @@
 	                                    'uma_rp_get_rpt',
 	                                    'uma_rp_authorize_rpt',
 	                                    'uma_rp_get_gat',
-	    );    /**
+                                            'setup_client',
+                                            'get_client_token',
+                                            'get_access_token_by_refresh_token',
+                                            'uma_rp_get_claims_gathering_url'
+	    );
+	    /**
 	     * @var string $command             Extend class protocol command name, for sending oxd-server
 	     */
 	    protected $command;
@@ -133,13 +138,13 @@
 	    }
 	
 	    /**
-	     * send function sends the command to the oxD server.
+	     * send function sends the command to the oxd server.
 	     *
 	     * Args:
 	     * command (dict) - Dict representation of the JSON command string
 	     * @return	void
 	     **/
-	    public function request()
+	    public function request($url="")
 	    {
 	        $this->setParams();
 	
@@ -156,10 +161,14 @@
 	        }else{
 	            $lenght = $lenght <= 999 ? "0" . $lenght : $lenght;
 	        }
-	
-	        $this->response_json = $this->oxd_socket_request(utf8_encode($lenght . $jsondata));
-	
-	        $this->response_json = str_replace(substr($this->response_json, 0, 4), "", $this->response_json);
+                if(Client_Socket_OXD_RP::getUrl() != null || $url != ""){
+                    $jsonHttpData = $this->getData()["params"];
+                    $this->response_json = $this->oxd_http_request(Client_Socket_OXD_RP::getUrl()?Client_Socket_OXD_RP::getUrl():$url,$jsonHttpData);
+                }
+                else{
+                    $this->response_json = $this->oxd_socket_request(utf8_encode($lenght . $jsondata));
+                    $this->response_json = str_replace(substr($this->response_json, 0, 4), "", $this->response_json);
+                }
 	        if ($this->response_json) {
 	            $object = json_decode($this->response_json);
 	            if ($object->status == 'error') {
@@ -210,7 +219,7 @@
 	    }
 	
 	    /**
-	     * Data which need to send oXD server.
+	     * Data which need to send oxd server.
 	     *
 	     * @return array
 	     */

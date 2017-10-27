@@ -2,7 +2,7 @@
   "name": "gluufederation/oxd-php-api",
   "description": "Protect your applications with oxd to enable single sign-on and API access management with OpenID Connect and UMA.",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.1.1",
   "authors": [
     {
       "name": "Mike Schwartz",
