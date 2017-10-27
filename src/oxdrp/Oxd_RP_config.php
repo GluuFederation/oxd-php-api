@@ -15,7 +15,7 @@
 	 *
 	 * @author    Gluu Inc.          : <https://gluu.org>
 	 * @link      Oxd site           : <https://oxd.gluu.org>
-	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.0.1/libraries/php/ >
+	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.1/libraries/php/ >
 	 * @director  Mike Schwartz      : <mike@gluu.org>
 	 * @support   Support email      : <support@gluu.org>
 	 * @developer Volodya Karapetyan : <https://github.com/karapetyan88> <mr.karapetyan88@gmail.com>
@@ -59,51 +59,62 @@
 	namespace oxdrp;
 	
 	class Oxd_RP_config
-	{
-	    /**
-	     * @static
-	     * @var string $op_host        Gluu server url, which need to connect
-	     */
-	    public static $op_host;
-	    /**
-	     * @static
-	     * @var int $oxd_host_port        Socket connection port
-	     */
-	    public static $oxd_host_port;
-	    /**
-	     * @static
-	     * @var string $authorization_redirect_uri        Site authorization redirect uri
-	     */
-	    public static $authorization_redirect_uri;
-	    /**
-	     * @static
-	     * @var string $post_logout_redirect_uri        Site logout redirect uri
-	     */
-	    public static $post_logout_redirect_uri;
-	    /**
-	     * @static
-	     * @var array $scope        For getting needed scopes from gluu-server
-	     */
-	    public static $scope;
-	    /**
-	     * @static
-	     * @var string $application_type        web or mobile
-	     */
-	    public static $application_type;
-	    /**
-	     * @static
-	     * @var array $response_types        OpenID Authentication response types
-	     */
-	    public static $response_types;
-	    /**
-	     * @static
-	     * @var array $grant_types        OpenID Token Request type
-	     */
-	    public static $grant_types;
-	
-	    /**
-	     * @static
-	     * @var array $acr_values        Gluu login acr type, can be basic, duo, u2f, gplus and etc.
-	     */
-	    public static $acr_values;
-	}
+{
+    /**
+     * @static
+     * @var string $op_host        Gluu server url, which need to connect
+     */
+    public static $op_host;
+    /**
+     * @static
+     * @var int $oxd_host_port        Socket connection host
+     */
+    public static $oxd_host;
+    /**
+     * @static
+     * @var int $oxd_host_port        Socket connection port
+     */
+    public static $oxd_host_port;
+    /**
+     * @static
+     * @var string $authorization_redirect_uri        Site authorization redirect uri
+     */
+    public static $authorization_redirect_uri;
+    /**
+     * @static
+     * @var string $post_logout_redirect_uri        Site logout redirect uri
+     */
+    public static $post_logout_redirect_uri;
+    /**
+     * @static
+     * @var array $scope        For getting needed scopes from gluu-server
+     */
+    public static $scope;
+    /**
+     * @static
+     * @var string $application_type        web or mobile
+     */
+    public static $application_type;
+    /**
+     * @static
+     * @var array $response_types        OpenID Authentication response types
+     */
+    public static $response_types;
+    /**
+     * @static
+     * @var array $grant_types        OpenID Token Request type
+     */
+    public static $grant_types;
+
+    /**
+     * @static
+     * @var array $acr_values        Gluu login acr type, can be basic, duo, u2f, gplus and etc.
+     */
+    public static $acr_values;
+    
+    /**
+     * @static
+     * @var string $conn_type        Can be socket/web
+     */
+    public static $conn_type;
+}

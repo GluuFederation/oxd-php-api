@@ -8,6 +8,7 @@ $update_site_registration = new Update_site_registration();
 
 $update_site_registration->setRequestAcrValues(Oxd_RP_config::$acr_values);
 $update_site_registration->setRequestOxdId($_SESSION['oxd_id']);
+$update_site_registration->setRequest_protection_access_token($_SESSION['protection_access_token']);
 $update_site_registration->setRequestAuthorizationRedirectUri(Oxd_RP_config::$authorization_redirect_uri);
 $update_site_registration->setRequestPostLogoutRedirectUri(Oxd_RP_config::$post_logout_redirect_uri);
 $update_site_registration->setRequestContacts(["test@test.test"]);
