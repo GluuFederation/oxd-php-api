@@ -11,7 +11,7 @@
 	 *
 	 * @package	  Oxd Library by Gluu
 	 * @category  Library, Api
-	 * @version   3.1.1
+	 * @version   3.1.2
 	 *
 	 * @author    Gluu Inc.          : <https://gluu.org>
 	 * @link      Oxd site           : <https://oxd.gluu.org>
@@ -73,18 +73,29 @@
 	     * @var array $request_resources                       This parameter your resources parameter
 	     */
 	    private $request_resources = array();
+            /**
+	     * @var array $request_resource                       This parameter your resources parameter
+	     */
 	    public $request_resource = array();
+            /**
+	     * @var array $request_condition                       This parameter your resources parameter
+	     */
 	    public $request_condition = array();
             
             /**
              * var string $request_protection_access_token
              */
             private $request_protection_access_token;
-            
+            /**
+	     * @return string
+	     */
             function getRequest_protection_access_token() {
                 return $this->request_protection_access_token;
             }
-            
+            /**
+             * @param string $request_protection_access_token
+	     * @return void
+	     */
             function setRequest_protection_access_token($request_protection_access_token) {
                 $this->request_protection_access_token = $request_protection_access_token;
             }
@@ -128,7 +139,10 @@
 	
 	        return $this->request_resources;
 	    }
-	
+            /**
+             * @param string $path
+	     * @return void
+	     */
 	    public function addResource($path){
 	        $request_resources =  array(
 	            'path'=>$path,
@@ -137,17 +151,30 @@
 	        array_push($this->request_resources, $request_resources);
 	        //$this->request_condition = null;
 	    }
-	
-	    public function addConditionForPath(array $httpMethods, array $scopes, array $ticketScopes){
+	    /**
+              * @param array $httpMethods
+              * @param array $scopes
+              * @param array $ticketScopes
+              * @param array $scope_expression
+	      * @return request_condition
+	      */
+	    public function addConditionForPath(array $httpMethods, array $scopes, array $ticketScopes, array $scope_expression = null){
 	        $request_condition =   array(
-	                                        "httpMethods" => $httpMethods,
-	                                        "scopes" => $scopes,
-	                                        "ticketScopes" => $ticketScopes
+	                                        "httpMethods" => $httpMethods
 	        );
+                if(!is_null($scope_expression)){
+                    $request_condition['scope_expression'] = $scope_expression;
+                } else {
+                    $request_condition['scopes'] = $scopes;
+                    $request_condition['ticketScopes'] = $ticketScopes;
+                }
 	
 	        array_push($this->request_condition, $request_condition);
 	        return $this->request_condition;
 	    }
+            /**
+	     * @return array $request_condition
+	     */
 	    public function getCondition(){
 	        return  $this->request_condition;
 	    }
