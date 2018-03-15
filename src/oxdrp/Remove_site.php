@@ -1,6 +1,4 @@
-
 <?php
-
 /**
  * Gluu-oxd-library
  *
@@ -47,7 +45,7 @@
  *
  */
 /**
- * Client Logout class
+ * Client Remove_site class
  *
  * Class is connecting to oxd-server via socket, and doing logout from gluu-server.
  *
@@ -59,6 +57,8 @@
  * @see	        Oxd_RP_config
  */
 namespace oxdrp;
+
+use oxdrp\Client_Socket_OXD_RP;
 use oxdrp\Client_OXD_RP;
 
 class Remove_site extends Client_OXD_RP {

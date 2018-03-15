@@ -15,7 +15,7 @@
 	 *
 	 * @author    Gluu Inc.          : <https://gluu.org>
 	 * @link      Oxd site           : <https://oxd.gluu.org>
-	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.1/libraries/php/>
+	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.2/libraries/php/>
 	 * @director  Mike Schwartz      : <mike@gluu.org>
 	 * @support   Support email      : <support@gluu.org>
 	 * @developer Volodya Karapetyan : <https://github.com/karapetyan88> <mr.karapetyan88@gmail.com>
@@ -580,20 +580,21 @@
                     "oxd_rp_programming_language" => 'php'
 	        );
 	    }
-            private $request_claims_redirect_uris;
+            private $request_claims_redirect_uris = [];
             
             /**
-             * @return string
+             * @return request_claims_redirect_uris
              */
             public function getRequestClaimsRedirectUri(){
                 return $this->request_claims_redirect_uris;
             }
-            /**
+            
+	    /**
              * @param string $request_claims_redirect_uris
              * @return void
              */
-            public function setRequestClaimsRedirectUri($request_claims_redirect_uris){
-                $this->request_claims_redirect_uris = $request_claims_redirect_uris;
+            public function addRequestClaimsRedirectUri($request_claims_redirect_uris){
+                $this->request_claims_redirect_uris[] = $request_claims_redirect_uris;
             }
             
             /**
@@ -603,7 +604,7 @@
 	     * command (dict) - Dict representation of the JSON command string
 	     * @return	void
 	     **/
-	    public function request($url="")
+	    public function request()
 	    {
 	        $this->setParams();
 	

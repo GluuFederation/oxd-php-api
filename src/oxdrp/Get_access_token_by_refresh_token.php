@@ -76,12 +76,6 @@
              * @var array $request_scopes
              */
             private $request_scopes;
-            
-            /**
-	     * @var string $request_access_token     access token for each request
-	     */
-            private $request_protection_access_token;
-            
 	    /**
 	     * Response parameter from oxd-server
 	     * It need to using for get_user_info and logout classes
@@ -105,6 +99,10 @@
 	     */
 	    private $response_refresh_token;
 	    
+            /**
+	     * @var string $request_access_token     access token for each request
+	     */
+            private $request_protection_access_token;
 	
 	    /**
 	     * Constructor

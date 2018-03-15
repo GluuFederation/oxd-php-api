@@ -15,7 +15,7 @@
 	 *
 	 * @author    Gluu Inc.          : <https://gluu.org>
 	 * @link      Oxd site           : <https://oxd.gluu.org>
-	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.1/libraries/php/ >
+	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.2/libraries/php/ >
 	 * @director  Mike Schwartz      : <mike@gluu.org>
 	 * @support   Support email      : <support@gluu.org>
 	 * @developer Volodya Karapetyan : <https://github.com/karapetyan88> <mr.karapetyan88@gmail.com>
@@ -522,6 +522,23 @@
 	    {
 	        $this->request_claims_locales = $request_claims_locales;
 	    }
+
+
+            private $request_claims_redirect_uris;
+            
+            /**
+             * @return string
+             */
+            public function getRequestClaimsRedirectUri(){
+                return $this->request_claims_redirect_uris;
+            }
+            /**
+             * @param $request_claims_redirect_uris
+             * @return void
+             */
+            public function setRequestClaimsRedirectUri($request_claims_redirect_uris){
+                $this->request_claims_redirect_uris = $request_claims_redirect_uris;
+            }
 	
 	    /**
 	     * Protocol command to oxd server
@@ -562,20 +579,5 @@
 	            "protection_access_token"=> $this->getRequest_protection_access_token()
 	        );
 	    }
-            private $request_claims_redirect_uris;
-            
-            /**
-             * @return string
-             */
-            public function getRequestClaimsRedirectUri(){
-                return $this->request_claims_redirect_uris;
-            }
-            /**
-             * @param $request_claims_redirect_uris
-             * @return void
-             */
-            public function setRequestClaimsRedirectUri($request_claims_redirect_uris){
-                $this->request_claims_redirect_uris = $request_claims_redirect_uris;
-            }
 	
 	}

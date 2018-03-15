@@ -15,7 +15,7 @@
 	 *
 	 * @author    Gluu Inc.          : <https://gluu.org>
 	 * @link      Oxd site           : <https://oxd.gluu.org>
-	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.0.1/libraries/php/>
+	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.2/libraries/php/>
 	 * @director  Mike Schwartz      : <mike@gluu.org>
 	 * @support   Support email      : <support@gluu.org>
 	 * @developer Volodya Karapetyan : <https://github.com/karapetyan88> <mr.karapetyan88@gmail.com>
@@ -49,16 +49,16 @@
 	/**
 	 * Oxd client update site registration class
 	 *
-	 * Class is connecting to oXD-server via socket, and updating registered site data in gluu server.
+	 * Class is connecting to oxd-server via socket, and updating registered site data in gluu server.
 	 *
-	 * @package		  Gluu-oxd-library
+	 * @package		Gluu-oxd-library
 	 * @subpackage	Libraries
 	 * @category	  Relying Party (RP) and User Managed Access (UMA)
 	 * @see	        Client_Socket_OXD_RP
 	 * @see	        Client_OXD_RP
 	 * @see	        Oxd_RP_config
 	 */
-	
+
 	namespace oxdrp;
 	use oxdrp\Client_OXD_RP;
 	
@@ -129,7 +129,7 @@
 	     */
 	    private $request_response_types = null;
 	    /**
-	     * Response parameter from oXD-server
+	     * Response parameter from oxd-server
 	     * It is basic parameter for other protocols
 	     *
 	     * @var string $response_oxd_id
@@ -452,7 +452,7 @@
 	    }
 	
 	    /**
-	     * Protocol command to oXD server
+	     * Protocol command to oxd server
 	     * @return void
 	     */
 	    public function setCommand()
@@ -460,7 +460,7 @@
 	        $this->command = 'update_site';
 	    }
 	    /**
-	     * Protocol parameter to oXD server
+	     * Protocol parameter to oxd server
 	     * @return void
 	     */
 	    public function setParams()
@@ -491,7 +491,7 @@
             private $request_claims_redirect_uris;
             
             /**
-             * @return string
+             * @return request_claims_redirect_uris
              */
             public function getRequestClaimsRedirectUri(){
                 return $this->request_claims_redirect_uris;

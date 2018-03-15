@@ -92,7 +92,7 @@
 	     */
 	    private $response_authorization_url;
             /**
-	     * @var string $request_access_token     access token for each request
+	     * @var string $request_protection_access_token     access token for each request
 	     */
             private $request_protection_access_token;
             

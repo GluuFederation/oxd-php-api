@@ -15,7 +15,7 @@
 	 *
 	 * @author    Gluu Inc.          : <https://gluu.org>
 	 * @link      Oxd site           : <https://oxd.gluu.org>
-	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.1/libraries/php/ >
+	 * @link      Documentation      : <https://gluu.org/docs/oxd/3.1.2/libraries/php/ >
 	 * @director  Mike Schwartz      : <mike@gluu.org>
 	 * @support   Support email      : <support@gluu.org>
 	 * @developer Volodya Karapetyan : <https://github.com/karapetyan88> <mr.karapetyan88@gmail.com>
@@ -312,7 +312,84 @@
 	    {
 	        $this->command = 'uma_rp_get_rpt';
 	    }
-	
+            /**
+             * var bool $is_needinfo
+             */
+            private $is_needinfo;
+            /**
+             * var string $needinfo_ticket
+             */
+            private $needinfo_ticket;
+            /**
+             * var array $required_claims
+             */
+            private $required_claims;
+            /**
+             * var string $redirect_user
+             */
+            private $redirect_user;
+            
+            /**
+	     * @return bool
+	     */
+            function getIs_needinfo() {
+                return $this->is_needinfo;
+            }
+            
+            /**
+	     * @return string
+	     */
+            function getNeedinfo_ticket() {
+                return $this->needinfo_ticket;
+            }
+            
+            /**
+	     * @return string
+	     */
+            function getRequired_claims() {
+                return $this->required_claims;
+            }
+            
+            /**
+	     * @return string
+	     */
+            function getRedirect_user() {
+                return $this->redirect_user;
+            }
+            
+            /**
+             * @param bool $is_needinfo
+	     * @return void
+	     */
+            function setIs_needinfo($is_needinfo) {
+                $this->is_needinfo = $is_needinfo;
+            }
+            
+            /**
+             * @param string $needinfo_ticket
+	     * @return void
+	     */
+            function setNeedinfo_ticket($needinfo_ticket) {
+                $this->needinfo_ticket = $needinfo_ticket;
+            }
+            
+            /**
+             * @param string $required_claims
+	     * @return void
+	     */
+            function setRequired_claims($required_claims) {
+                $this->required_claims = $required_claims;
+            }
+            
+            /**
+             * @param string $redirect_user
+	     * @return void
+	     */
+            function setRedirect_user($redirect_user) {
+                $this->redirect_user = $redirect_user;
+            }
+
+                        
 	    /**
 	     * Protocol parameter to oxd server
 	     * @return void
