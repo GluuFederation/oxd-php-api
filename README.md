@@ -31,7 +31,7 @@ $ composer install `composer require "gluufederation/oxd-php-api": "3.0.1"`
 **Note**: OpenID Connect requires *https.* This library will not 
 work if your website uses *http* only.
 
-## Configuration 
+## Configuration  
 
 The oxd-php configuration file is located in 
 'oxd-rp-settings.json'. The values here are used during 
